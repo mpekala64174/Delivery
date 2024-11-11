@@ -1,0 +1,36 @@
+﻿@model Delivery.Models.Uzytkownicy
+
+@{
+    ViewData["Title"] = "Create New User";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<h4>Create New User</h4>
+<hr>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label for="Imie">First Name</label>
+        <input type="text" class="form-control" id="Imie" name="Imie" value="@Model.Imie" required />
+    </div>
+    <div class="form-group">
+        <label for="Nazwisko">Last Name</label>
+        <input type="text" class="form-control" id="Nazwisko" name="Nazwisko" value="@Model.Nazwisko" required />
+    </div>
+    <div class="form-group">
+        <label for="Login">Login</label>
+        <input type="text" class="form-control" id="Login" name="Login" value="@Model.Login" required />
+    </div>
+    <div class="form-group">
+        <label for="Haslo">Password</label>
+        <input type="password" class="form-control" id="Haslo" name="Haslo" value="@Model.Haslo" required />
+    </div>
+    <div class="form-group">
+        <label for="Rola">Role</label>
+        <input type="text" class="form-control" id="Rola" name="Rola" value="@Model.Rola" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create User</button>
+    <a href="@Url.Action("Index", "Uzytkownicy")" class="btn btn-secondary">Cancel</a>
+</form>

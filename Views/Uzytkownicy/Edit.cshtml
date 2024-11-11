@@ -1,0 +1,66 @@
+﻿@model Delivery.Models.Uzytkownicy
+
+@{
+    ViewData["Title"] = "Edit User";
+}
+
+<h1>Edit</h1>
+
+<h4>User Details</h4>
+<hr />
+
+<form asp-action="Edit" method="post">
+    <!-- ID_uzytkownika input field (readonly, so it doesn't change) -->
+    <div class="form-group">
+        <label asp-for="ID_uzytkownika" class="control-label"></label>
+        <input asp-for="ID_uzytkownika" class="form-control" readonly />
+        <span asp-validation-for="ID_uzytkownika" class="text-danger"></span>
+    </div>
+
+    <!-- Imie (First Name) input field -->
+    <div class="form-group">
+        <label asp-for="Imie" class="control-label"></label>
+        <input asp-for="Imie" class="form-control" />
+        <span asp-validation-for="Imie" class="text-danger"></span>
+    </div>
+
+    <!-- Nazwisko (Last Name) input field -->
+    <div class="form-group">
+        <label asp-for="Nazwisko" class="control-label"></label>
+        <input asp-for="Nazwisko" class="form-control" />
+        <span asp-validation-for="Nazwisko" class="text-danger"></span>
+    </div>
+
+    <!-- Login input field -->
+    <div class="form-group">
+        <label asp-for="Login" class="control-label"></label>
+        <input asp-for="Login" class="form-control" />
+        <span asp-validation-for="Login" class="text-danger"></span>
+    </div>
+
+    <!-- Haslo (Password) input field -->
+    <div class="form-group">
+        <label asp-for="Haslo" class="control-label"></label>
+        <input asp-for="Haslo" type="password" class="form-control" />
+        <span asp-validation-for="Haslo" class="text-danger"></span>
+    </div>
+
+    <!-- Rola (Role) input field -->
+    <div class="form-group">
+        <label asp-for="Rola" class="control-label"></label>
+        <input asp-for="Rola" class="form-control" />
+        <span asp-validation-for="Rola" class="text-danger"></span>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+        <a href="@Url.Action("Index", "Uzytkownicy")" class="btn btn-secondary">Back to List</a>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

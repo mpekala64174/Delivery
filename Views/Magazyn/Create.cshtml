@@ -1,0 +1,44 @@
+﻿@model Delivery.Models.Magazyn
+
+@{
+    ViewData["Title"] = "Create Magazyn";
+}
+
+<h1>Create</h1>
+
+<h4>Magazyn</h4>
+<hr />
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="Waga" class="control-label"></label>
+        <input asp-for="Waga" class="form-control" />
+        <span asp-validation-for="Waga" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Rozmiar" class="control-label"></label>
+        <input asp-for="Rozmiar" class="form-control" />
+        <span asp-validation-for="Rozmiar" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="MiejsceOdbioru" class="control-label"></label>
+        <input asp-for="MiejsceOdbioru" class="form-control" />
+        <span asp-validation-for="MiejsceOdbioru" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Status" class="control-label"></label>
+        <input asp-for="Status" class="form-control" />
+        <span asp-validation-for="Status" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+        <a href="@Url.Action("Index", "Magazyn")" class="btn btn-secondary">Back to List</a>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

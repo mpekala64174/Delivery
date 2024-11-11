@@ -1,0 +1,37 @@
+﻿@model Delivery.Models.PaczkiAutomat
+
+@{
+    ViewData["Title"] = "Delete PaczkiAutomat";
+}
+
+<h2>Delete PaczkiAutomat</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+
+<div>
+    <h4>PaczkiAutomat</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Transport Package ID</dt>
+        <dd class="col-sm-10">@Model.PaczkiTransport?.ID_paczki_transport</dd>
+
+        <dt class="col-sm-2">Automat ID</dt>
+        <dd class="col-sm-10">@Model.AutomatPaczkowy?.ID_automat</dd>
+
+        <dt class="col-sm-2">Location</dt>
+        <dd class="col-sm-10">@Model.AutomatPaczkowy?.Lokalizacja</dd>
+
+        <!-- You can add any other fields you want to show from the PaczkiAutomat model -->
+    </dl>
+
+    <!-- Form to confirm deletion -->
+    <form asp-action="Delete" method="post">
+        @Html.AntiForgeryToken()
+
+        <!-- Pass the ID of the PaczkiAutomat to be deleted -->
+        <input type="hidden" name="id" value="@Model.ID_paczki_automat" />
+
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>

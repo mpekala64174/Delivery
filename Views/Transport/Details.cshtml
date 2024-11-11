@@ -1,0 +1,22 @@
+﻿@model Delivery.Models.Transport
+
+@{
+    ViewData["Title"] = "Transport Details";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <h4>Transport</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">ID Transport</dt>
+        <dd class="col-sm-10">@Model.ID_transport</dd>
+
+        <dt class="col-sm-2">User</dt>
+        <dd class="col-sm-10">@Model.Uzytkownik.Imie @Model.Uzytkownik.Nazwisko</dd>
+    </dl>
+</div>
+
+<a href="@Url.Action("Index", "Transport")" class="btn btn-secondary">Back to List</a>
+<a href="@Url.Action("Delete", "Transport", new { id = Model.ID_transport })" class="btn btn-danger">Delete</a>

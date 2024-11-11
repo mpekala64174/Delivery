@@ -1,0 +1,58 @@
+﻿@model Delivery.Models.Magazyn
+
+@{
+    ViewData["Title"] = "Edit Magazyn";
+}
+
+<h1>Edit</h1>
+
+<h4>Magazyn</h4>
+<hr />
+
+<form asp-action="Edit" method="post">
+    <!-- ID_paczki input field (readonly, so it doesn't change) -->
+    <div class="form-group">
+        <label asp-for="ID_paczki" class="control-label"></label>
+        <input asp-for="ID_paczki" class="form-control" readonly />
+        <span asp-validation-for="ID_paczki" class="text-danger"></span>
+    </div>
+
+    <!-- Waga input field -->
+    <div class="form-group">
+        <label asp-for="Waga" class="control-label"></label>
+        <input asp-for="Waga" class="form-control" />
+        <span asp-validation-for="Waga" class="text-danger"></span>
+    </div>
+
+    <!-- Rozmiar input field -->
+    <div class="form-group">
+        <label asp-for="Rozmiar" class="control-label"></label>
+        <input asp-for="Rozmiar" class="form-control" />
+        <span asp-validation-for="Rozmiar" class="text-danger"></span>
+    </div>
+
+    <!-- Miejsce Odbioru input field -->
+    <div class="form-group">
+        <label asp-for="MiejsceOdbioru" class="control-label"></label>
+        <input asp-for="MiejsceOdbioru" class="form-control" />
+        <span asp-validation-for="MiejsceOdbioru" class="text-danger"></span>
+    </div>
+
+    <!-- Status input field -->
+    <div class="form-group">
+        <label asp-for="Status" class="control-label"></label>
+        <input asp-for="Status" class="form-control" />
+        <span asp-validation-for="Status" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+        <a href="@Url.Action("Index", "Magazyn")" class="btn btn-secondary">Back to List</a>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

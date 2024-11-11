@@ -1,0 +1,34 @@
+﻿@model Delivery.Models.Magazyn
+
+@{
+    ViewData["Title"] = "Delete Magazyn";
+}
+
+<h1>Delete</h1>
+
+<h4>Are you sure you want to delete this?</h4>
+<hr />
+
+<dl class="row">
+    <dt class="col-sm-2">ID_paczki</dt>
+    <dd class="col-sm-10">@Model.ID_paczki</dd>
+
+    <dt class="col-sm-2">Waga</dt>
+    <dd class="col-sm-10">@Model.Waga</dd>
+
+    <dt class="col-sm-2">Rozmiar</dt>
+    <dd class="col-sm-10">@Model.Rozmiar</dd>
+
+    <dt class="col-sm-2">Miejsce Odbioru</dt>
+    <dd class="col-sm-10">@Model.MiejsceOdbioru</dd>
+
+    <dt class="col-sm-2">Status</dt>
+    <dd class="col-sm-10">@Model.Status</dd>
+</dl>
+
+<form asp-action="Delete" method="post">
+    @Html.AntiForgeryToken()  <!-- Ensure Anti-forgery token is added -->
+    <input type="hidden" asp-for="ID_paczki" />  <!-- Hidden field to pass ID -->
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a href="@Url.Action("Index", "Magazyn")" class="btn btn-secondary">Cancel</a>
+</form>

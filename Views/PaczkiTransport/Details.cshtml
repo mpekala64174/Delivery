@@ -1,0 +1,31 @@
+﻿@model Delivery.Models.PaczkiTransport
+
+@{
+    ViewData["Title"] = "Paczki Transport Details";
+}
+
+<h2>Paczki Transport Details</h2>
+
+<div>
+    <h4>Paczki Transport</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Transport ID</dt>
+        <dd class="col-sm-10">@Model.Transport?.ID_transport</dd>
+
+        <dt class="col-sm-2">Paczka ID</dt>
+        <dd class="col-sm-10">@Model.Paczka?.ID_paczki</dd>
+
+        <dt class="col-sm-2">Rozmiar</dt>
+        <dd class="col-sm-10">@Model.Paczka?.Rozmiar</dd>
+
+        <dt class="col-sm-2">Data Odbioru</dt>
+        <dd class="col-sm-10">@Model.DataOdbioru.ToString("yyyy-MM-dd")</dd>
+
+        <dt class="col-sm-2">Data Oddania</dt>
+        <dd class="col-sm-10">@Model.DataOddania.ToString("yyyy-MM-dd")</dd>
+    </dl>
+</div>
+
+<a asp-action="Index" class="btn btn-secondary">Back to List</a>
+<a href="@Url.Action("Delete", "PaczkiTransport", new { id = Model.ID_paczki_transport })" class="btn btn-danger">Delete</a>

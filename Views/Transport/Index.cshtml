@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Delivery.Models.Transport>
+
+@{
+    ViewData["Title"] = "Transport List";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a href="@Url.Action("Create", "Transport")" class="btn btn-primary">Create New Transport</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID Transport</th>
+            <th>User</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var transport in Model)
+        {
+            <tr>
+                <td>@transport.ID_transport</td>
+                <td>@transport.Uzytkownik.Imie @transport.Uzytkownik.Nazwisko</td>
+                <td>
+                    <a href="@Url.Action("Details", "Transport", new { id = transport.ID_transport })" class="btn btn-info">Details</a>
+                    <a href="@Url.Action("Delete", "Transport", new { id = transport.ID_transport })" class="btn btn-danger">Delete</a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,36 @@
+﻿@model Delivery.Models.Uzytkownicy
+
+@{
+    ViewData["Title"] = "User Details";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="row">
+    <div class="col-md-6">
+        <dl class="dl-horizontal">
+            <dt>First Name</dt>
+            <dd>@Model.Imie</dd>
+
+            <dt>Last Name</dt>
+            <dd>@Model.Nazwisko</dd>
+
+            <dt>Login</dt>
+            <dd>@Model.Login</dd>
+
+            <dt>Role</dt>
+            <dd>@Model.Rola</dd>
+        </dl>
+    </div>
+</div>
+
+<div>
+    <!-- Back to the list -->
+    <a href="@Url.Action("Index", "Uzytkownicy")" class="btn btn-secondary">Back to List</a>
+
+    <!-- Edit Button -->
+    <a href="@Url.Action("Edit", "Uzytkownicy", new { id = Model.ID_uzytkownika })" class="btn btn-warning">Edit</a>
+
+    <!-- Delete Button -->
+    <a href="@Url.Action("Delete", "Uzytkownicy", new { id = Model.ID_uzytkownika })" class="btn btn-danger">Delete</a>
+</div>

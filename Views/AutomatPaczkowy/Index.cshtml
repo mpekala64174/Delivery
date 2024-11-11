@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Delivery.Models.AutomatPaczkowy>
+
+@{
+    ViewData["Title"] = "Automat Paczkowy List";
+}
+
+<h1>Automat Paczkowy List</h1>
+
+<p>
+    <a href="@Url.Action("Create", "AutomatPaczkowy")" class="btn btn-primary">Create New Automat Paczkowy</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID Automat</th>
+            <th>Lokalizacja</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ID_automat</td>
+                <td>@item.Lokalizacja</td>
+                <td>
+                    <a href="@Url.Action("Details", "AutomatPaczkowy", new { id = item.ID_automat })" class="btn btn-info">Details</a>
+                    <a href="@Url.Action("Delete", "AutomatPaczkowy", new { id = item.ID_automat })" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

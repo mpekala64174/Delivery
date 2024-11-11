@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Delivery.Models.Magazyn>
+
+@{
+    ViewData["Title"] = "Magazyn - Index";
+}
+
+<h1>Magazyn</h1>
+
+<p>
+    <a href="@Url.Action("Create", "Magazyn")" class="btn btn-primary">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.ID_paczki)</th>
+            <th>@Html.DisplayNameFor(model => model.Waga)</th>
+            <th>@Html.DisplayNameFor(model => model.Rozmiar)</th>
+            <th>@Html.DisplayNameFor(model => model.MiejsceOdbioru)</th>
+            <th>@Html.DisplayNameFor(model => model.Status)</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ID_paczki</td>
+                <td>@item.Waga</td>
+                <td>@item.Rozmiar</td>
+                <td>@item.MiejsceOdbioru</td>
+                <td>@item.Status</td>
+                <td>
+                    <a href="@Url.Action("Details", "Magazyn", new { id = item.ID_paczki })" class="btn btn-info">Details</a>
+                    <a href="@Url.Action("Edit", "Magazyn", new { id = item.ID_paczki })" class="btn btn-warning">Edit</a>
+                    <a href="@Url.Action("Delete", "Magazyn", new { id = item.ID_paczki })" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

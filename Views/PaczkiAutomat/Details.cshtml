@@ -1,0 +1,35 @@
+﻿@model Delivery.Models.PaczkiAutomat
+
+@{
+    ViewData["Title"] = "PaczkiAutomat Details";
+}
+
+<h2>PaczkiAutomat Details</h2>
+
+<div class="table-responsive">
+    <table class="table">
+        <tr>
+            <th>ID</th>
+            <td>@Model.ID_paczki_automat</td>
+        </tr>
+        <tr>
+            <th>Transport Package ID</th>
+            <td>@Model.ID_paczki_transport</td>
+        </tr>
+        <tr>
+            <th>Automat ID</th>
+            <td>@Model.ID_automat</td>
+        </tr>
+        <tr>
+            <th>Data oddania</th>
+            <td>@Model.PaczkiTransport?.DataOddania.ToString("yyyy-MM-dd")</td>
+        </tr>
+        <tr>
+            <th>Automat Location</th>
+            <td>@Model.AutomatPaczkowy?.Lokalizacja</td> <!-- Assuming AutomatPaczkowy has a 'Lokalizacja' field -->
+        </tr>
+    </table>
+</div>
+
+<a asp-action="Index" class="btn btn-secondary">Back to List</a>
+<a href="@Url.Action("Delete", "PaczkiAutomat", new { id = Model.ID_paczki_automat })" class="btn btn-danger">Delete</a>

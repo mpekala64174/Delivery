@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Delivery.Models.PaczkiAutomat>
+
+@{
+    ViewData["Title"] = "PaczkiAutomat List";
+}
+
+<h1>PaczkiAutomat List</h1>
+
+<p>
+    <a href="@Url.Action("Create", "PaczkiAutomat")" class="btn btn-primary">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID Paczki Automat</th>
+            <th>ID Paczki Transport</th>
+            <th>ID Automat</th>
+            <th>Lokalizacja Automat</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ID_paczki_automat</td>
+                <td>@item.ID_paczki_transport</td>
+                <td>@item.ID_automat</td>
+                <td>@item.AutomatPaczkowy?.Lokalizacja</td> <!-- Display location of Automat -->
+                <td>
+                    <a href="@Url.Action("Details", "PaczkiAutomat", new { id = item.ID_paczki_automat })" class="btn btn-info">Details</a>
+                    <a href="@Url.Action("Delete", "PaczkiAutomat", new { id = item.ID_paczki_automat })" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

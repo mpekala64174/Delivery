@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Create PaczkiAutomat";
+}
+
+<h2>Create PaczkiAutomat</h2>
+
+<form asp-action="Create" method="post">
+    @Html.AntiForgeryToken()  <!-- CSRF Token -->
+
+    <div class="form-group">
+        <label for="ID_paczki_transport" class="control-label">Transport Package ID</label>
+        <input type="text" name="ID_paczki_transport" id="ID_paczki_transport" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="ID_automat" class="control-label">Automat ID</label>
+        <input type="text" name="ID_automat" id="ID_automat" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </div>
+</form>

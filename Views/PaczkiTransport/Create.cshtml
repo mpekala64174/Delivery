@@ -1,0 +1,28 @@
+﻿@model Delivery.Models.PaczkiTransport
+
+@{
+    ViewData["Title"] = "Create Paczki Transport";
+}
+
+<h2>Create Paczki Transport</h2>
+
+<form asp-action="Create" method="post">
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        <label for="ID_paczki" class="control-label">Paczka ID</label>
+        <input type="text" name="ID_paczki" id="ID_paczki" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="ID_transport" class="control-label">Transport ID</label>
+        <input type="text" name="ID_transport" id="ID_transport" class="form-control" />
+    </div>
+
+
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </div>
+</form>

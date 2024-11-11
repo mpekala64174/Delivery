@@ -1,0 +1,157 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Delivery
+build_property.RootNamespace = Delivery
+build_property.ProjectDir = C:\Users\Dell\Delivery\Delivery\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Dell\Delivery\Delivery
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Dell/Delivery/Delivery/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dell/Delivery/Delivery/Views/Account/Logout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dell/Delivery/Delivery/Views/AutomatPaczkowy/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0b21hdFBhY3prb3d5XENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dell/Delivery/Delivery/Views/AutomatPaczkowy/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0b21hdFBhY3prb3d5XERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dell/Delivery/Delivery/Views/AutomatPaczkowy/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0b21hdFBhY3prb3d5XERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dell/Delivery/Delivery/Views/AutomatPaczkowy/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0b21hdFBhY3prb3d5XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dell/Delivery/Delivery/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dell/Delivery/Delivery/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dell/Delivery/Delivery/Views/Magazyn/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFnYXp5blxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dell/Delivery/Delivery/Views/Magazyn/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFnYXp5blxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dell/Delivery/Delivery/Views/Magazyn/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFnYXp5blxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dell/Delivery/Delivery/Views/Magazyn/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFnYXp5blxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dell/Delivery/Delivery/Views/Magazyn/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFnYXp5blxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dell/Delivery/Delivery/Views/PaczkiAutomat/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjemtpQXV0b21hdFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dell/Delivery/Delivery/Views/PaczkiAutomat/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjemtpQXV0b21hdFxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dell/Delivery/Delivery/Views/PaczkiAutomat/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjemtpQXV0b21hdFxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dell/Delivery/Delivery/Views/PaczkiAutomat/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjemtpQXV0b21hdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dell/Delivery/Delivery/Views/PaczkiTransport/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjemtpVHJhbnNwb3J0XENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dell/Delivery/Delivery/Views/PaczkiTransport/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjemtpVHJhbnNwb3J0XERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dell/Delivery/Delivery/Views/PaczkiTransport/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjemtpVHJhbnNwb3J0XERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dell/Delivery/Delivery/Views/PaczkiTransport/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjemtpVHJhbnNwb3J0XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dell/Delivery/Delivery/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dell/Delivery/Delivery/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dell/Delivery/Delivery/Views/Transport/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNwb3J0XENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dell/Delivery/Delivery/Views/Transport/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNwb3J0XERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dell/Delivery/Delivery/Views/Transport/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNwb3J0XERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dell/Delivery/Delivery/Views/Transport/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNwb3J0XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dell/Delivery/Delivery/Views/Uzytkownicy/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXp5dGtvd25pY3lcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dell/Delivery/Delivery/Views/Uzytkownicy/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXp5dGtvd25pY3lcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dell/Delivery/Delivery/Views/Uzytkownicy/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXp5dGtvd25pY3lcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dell/Delivery/Delivery/Views/Uzytkownicy/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXp5dGtvd25pY3lcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dell/Delivery/Delivery/Views/Uzytkownicy/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXp5dGtvd25pY3lcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dell/Delivery/Delivery/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dell/Delivery/Delivery/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dell/Delivery/Delivery/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-zqp0cnkcin

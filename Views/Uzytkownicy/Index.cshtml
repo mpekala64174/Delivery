@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Delivery.Models.Uzytkownicy>
+
+@{
+    ViewData["Title"] = "User List";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a href="@Url.Action("Create", "Uzytkownicy")" class="btn btn-primary">Create New User</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Login</th>
+            <th>Role</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var uzytkownik in Model)
+        {
+            <tr>
+                <td>@uzytkownik.ID_uzytkownika</td>
+                <td>@uzytkownik.Imie</td>
+                <td>@uzytkownik.Nazwisko</td>
+                <td>@uzytkownik.Login</td>
+                <td>@uzytkownik.Rola</td>
+                <td>
+                    <a href="@Url.Action("Details", "Uzytkownicy", new { id = uzytkownik.ID_uzytkownika })" class="btn btn-info">Details</a>
+                    <a href="@Url.Action("Edit", "Uzytkownicy", new { id = uzytkownik.ID_uzytkownika })" class="btn btn-warning">Edit</a>
+                    <a href="@Url.Action("Delete", "Uzytkownicy", new { id = uzytkownik.ID_uzytkownika })" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

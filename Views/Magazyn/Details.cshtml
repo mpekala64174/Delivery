@@ -1,0 +1,33 @@
+﻿@model Delivery.Models.Magazyn
+
+@{
+    ViewData["Title"] = "Details - Magazyn";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Magazyn</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">ID_paczki</dt>
+        <dd class="col-sm-10">@Model.ID_paczki</dd>
+
+        <dt class="col-sm-2">Waga</dt>
+        <dd class="col-sm-10">@Model.Waga</dd>
+
+        <dt class="col-sm-2">Rozmiar</dt>
+        <dd class="col-sm-10">@Model.Rozmiar</dd>
+
+        <dt class="col-sm-2">Miejsce Odbioru</dt>
+        <dd class="col-sm-10">@Model.MiejsceOdbioru</dd>
+
+        <dt class="col-sm-2">Status</dt>
+        <dd class="col-sm-10">@Model.Status</dd>
+    </dl>
+</div>
+<div>
+    <a href="@Url.Action("Index", "Magazyn")" class="btn btn-secondary">Back to List</a>
+    <a href="@Url.Action("Edit", "Magazyn", new { id = Model.ID_paczki })" class="btn btn-warning">Edit</a>
+    <a href="@Url.Action("Delete", "Magazyn", new { id = Model.ID_paczki })" class="btn btn-danger">Delete</a>
+</div>
