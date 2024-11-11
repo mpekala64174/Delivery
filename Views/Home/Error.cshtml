@@ -1,0 +1,19 @@
+﻿@model Delivery.Models.ErrorViewModel
+
+@{
+    ViewData["Title"] = "Error";
+}
+
+<h1>Error</h1>
+
+<div class="alert alert-danger">
+    <h4 class="alert-heading">Oops! Something went wrong.</h4>
+    <p>We're sorry, but an unexpected error occurred. Please try again later or contact support if the issue persists.</p>
+
+    @if (Model.ShowRequestId)
+    {
+        <p><strong>Request ID:</strong> @Model.RequestId</p>
+    }
+</div>
+
+<p><a href="/">Go back to Home page</a></p>
