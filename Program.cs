@@ -1,6 +1,15 @@
 using Microsoft.EntityFrameworkCore;
+using System.Net;
+using System.Net.Security;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Wy³¹czenie walidacji certyfikatów SSL w œrodowisku deweloperskim
+if (builder.Environment.IsDevelopment())
+{
+	ServicePointManager.ServerCertificateValidationCallback +=
+		(sender, certificate, chain, sslPolicyErrors) => true;
+}
 
 // Dodaj us³ugi MVC
 builder.Services.AddControllersWithViews();

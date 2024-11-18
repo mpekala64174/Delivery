@@ -1,15 +1,5 @@
 Baza SQL
 
-
--- Tabela: magazyn
-CREATE TABLE magazyn (
-    ID_paczki INT PRIMARY KEY IDENTITY(1,1),
-    waga DECIMAL(10, 2) NOT NULL,
-    rozmiar VARCHAR(50) NOT NULL,
-    miejsce_odbioru VARCHAR(100) NOT NULL,
-    status VARCHAR(50) NOT NULL
-);
-
 -- Tabela: uzytkownicy
 CREATE TABLE uzytkownicy (
     ID_uzytkownika INT PRIMARY KEY IDENTITY(1,1),
@@ -18,6 +8,15 @@ CREATE TABLE uzytkownicy (
     login VARCHAR(50) UNIQUE NOT NULL,
     haslo VARCHAR(255) NOT NULL,
     rola VARCHAR(50) NOT NULL
+);
+
+-- Tabela: magazyn
+CREATE TABLE magazyn (
+    ID_paczki INT PRIMARY KEY IDENTITY(1,1),
+    waga DECIMAL(10, 2) NOT NULL,
+    rozmiar VARCHAR(50) NOT NULL,
+    miejsce_odbioru VARCHAR(100) NOT NULL,
+    status VARCHAR(50) NOT NULL
 );
 
 -- Tabela: automat_paczkowy
@@ -52,3 +51,37 @@ CREATE TABLE paczki_automat (
     FOREIGN KEY (ID_paczki_transport) REFERENCES paczki_transport(ID_paczki_transport),
     FOREIGN KEY (ID_automat) REFERENCES automat_paczkowy(ID_automat)
 );
+
+
+DUMMY DATA
+
+
+INSERT INTO magazyn (waga, rozmiar, miejsce_odbioru, status) VALUES
+(2.5, 'Ma³y', 'Warszawa', 'W magazynie'),
+(5.2, 'Œredni', 'Kraków', 'W drodze'),
+(10.0, 'Du¿y', 'Gdañsk', 'Dostarczono');
+
+INSERT INTO uzytkownicy (imie, nazwisko, login, haslo, rola) VALUES
+('Jan', 'Kowalski', 'jan.kowalski', 'haslo123', 'Kurier'),
+('Anna', 'Nowak', 'anna.nowak', 'haslo456', 'Kurier'),
+('Marek', 'Wiœniewski', 'marek.wisniewski', 'haslo789', 'Kurier');
+
+INSERT INTO transport (ID_uzytkownika) VALUES
+(1), 
+(1), 
+(3); 
+
+INSERT INTO paczki_transport (ID_paczki, ID_transport, data_odbioru, data_oddania) VALUES
+(1, 1, '2024-11-01', '2024-11-02'),
+(2, 1, '2024-11-03', NULL),
+(3, 2, '2024-11-04', '2024-11-06');
+
+INSERT INTO automat_paczkowy (lokalizacja) VALUES
+('Warszawa - ul. Marsza³kowska 10'),
+('Kraków - ul. Grodzka 5'),
+('Gdañsk - ul. D³uga 15');
+
+INSERT INTO paczki_automat (ID_paczki_transport, ID_automat) VALUES
+(1, 1), 
+(2, 2), 
+(3, 3); 
