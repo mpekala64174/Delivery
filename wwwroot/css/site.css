@@ -1,5 +1,8 @@
+#global settings
+
 html {
-  font-size: 14px;
+    font-size: 14px;
+    background-image: linear-gradient(#1B1833, #F29F58);
 }
 
 @media (min-width: 768px) {
@@ -8,11 +11,45 @@ html {
   }
 }
 
+@media (min-width: 1400px)
+{
+    .container{
+       max-width: 500px;
+    }
+}
+
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background-image: linear-gradient(#1B1833, #441752);
+    color: aliceblue;
+    font-family: Arial;
+}
+
+h1{
+    font-weight: bolder;
+}
+
+p, li{
+    text-align: left;
+}
+
+.btn-primary {
+    background-color: #0d6efd;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #1e2e99;
+    border-color: #1e2e99;
+}
+
+btn-info {
+    background-color: #AB4459;
 }
