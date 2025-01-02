@@ -2,9 +2,11 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-[Authorize]
+[Authorize(Roles = "admin")]
 public class UzytkownicyController : Controller
 {
+    
+
     private readonly ApplicationDbContext _context;
 
     public UzytkownicyController(ApplicationDbContext context)

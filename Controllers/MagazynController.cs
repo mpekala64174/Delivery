@@ -2,6 +2,8 @@
 using Delivery.Models; // Twoje modele
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
+using System.Text;
+
 
 [Authorize]
 public class MagazynController : Controller
@@ -161,4 +163,27 @@ public class MagazynController : Controller
     {
         return _context.Magazyn.Any(e => e.ID_paczki == id);
     }
+
+    [HttpGet]
+    public async Task<IActionResult> ExportToCsv()
+    {
+        var magazynData = await _context.Magazyn.ToListAsync();
+
+        var csv = new StringBuilder();
+        csv.AppendLine("ID_paczki;Waga;Rozmiar;MiejsceOdbioru;Status"); 
+
+        foreach (var item in magazynData)
+        {
+            csv.AppendLine($"{item.ID_paczki};{item.Waga};{item.Rozmiar};{item.MiejsceOdbioru};{item.Status}");
+        }
+
+        var bytes = Encoding.UTF8.GetBytes(csv.ToString());
+        var output = new FileContentResult(bytes, "text/csv")
+        {
+            FileDownloadName = "MagazynData.csv"
+        };
+
+        return output;
+    }
+
 }

@@ -1,29 +1,33 @@
 ﻿@model IEnumerable<Delivery.Models.PaczkiTransport>
 
-@{
+    @{
     ViewData["Title"] = "Paczki Transport List";
-}
+    }
 
-<h1>Paczki Transport List</h1>
+    <h1>Paczki Transport List</h1>
 
-<p>
-    <a href="@Url.Action("Create", "PaczkiTransport")" class="btn btn-primary">Create New</a>
-</p>
+    <p style="float:left;">
+        <a href="@Url.Action("Create", "PaczkiTransport")" class="btn btn-primary">Create New</a>
+    </p>
+    <p style="float:right;">
+        <a href="@Url.Action("ExportToCsv", "PaczkiTransport")" class="btn btn-success">Download CSV</a>
+    </p>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>ID Paczki Transport</th>
-            <th>ID Paczki</th>
-            <th>Rozmiar Paczki</th>
-            <th>ID Transport</th>
-            <th>Data Odbioru</th>
-            <th>Data Oddania</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID Paczki Transport</th>
+                <th>ID Paczki</th>
+                <th>Rozmiar Paczki</th>
+                <th>ID Transport</th>
+                <th>Data Odbioru</th>
+                <th>Data Oddania</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
         {
             <tr>
                 <td>@item.ID_paczki_transport</td>
@@ -38,5 +42,5 @@
                 </td>
             </tr>
         }
-    </tbody>
-</table>
+        </tbody>
+    </table>

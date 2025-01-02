@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Text;
 [Authorize]
 public class PaczkiAutomatController : Controller
 {
@@ -208,5 +209,33 @@ public class PaczkiAutomatController : Controller
     private bool PaczkiAutomatExists(int id)
     {
         return _context.PaczkiAutomat.Any(e => e.ID_paczki_automat == id);
+    }
+    [HttpGet]
+    public async Task<IActionResult> ExportToCsv()
+    {
+        // Get the data from the database
+        var paczkiAutomatData = await _context.PaczkiAutomat
+            .Include(pa => pa.PaczkiTransport)  // Include related PaczkiTransport data
+            .Include(pa => pa.AutomatPaczkowy)  // Include related AutomatPaczkowy data
+            .ToListAsync();
+
+        // Build CSV content
+        var csv = new StringBuilder();
+        csv.AppendLine("ID_paczki_automat;ID_paczki_transport;ID_automat;Lokalizacja_Automat");
+
+        foreach (var item in paczkiAutomatData)
+        {
+            var lokalizacja = item.AutomatPaczkowy?.Lokalizacja ?? "N/A";  // Handle potential null value for Lokalizacja
+            csv.AppendLine($"{item.ID_paczki_automat};{item.ID_paczki_transport};{item.ID_automat};{lokalizacja}");
+        }
+
+        // Convert CSV to byte array and prepare file for download
+        var bytes = Encoding.UTF8.GetBytes(csv.ToString());
+        var output = new FileContentResult(bytes, "text/csv")
+        {
+            FileDownloadName = "PaczkiAutomatData.csv"
+        };
+
+        return output;
     }
 }

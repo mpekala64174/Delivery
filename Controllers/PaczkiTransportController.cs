@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Text;
 using System.Linq;
 using System.Threading.Tasks;
 [Authorize]
@@ -200,4 +201,30 @@ public class PaczkiTransportController : Controller
     {
         return _context.PaczkiTransport.Any(e => e.ID_paczki_transport == id);
     }
+    [HttpGet]
+    public async Task<IActionResult> ExportToCsv()
+    {
+        // Retrieve the data from PaczkiTransport, including related Paczka and Transport entities
+        var paczkiTransportData = await _context.PaczkiTransport
+                                                 .Include(pt => pt.Paczka)
+                                                 .Include(pt => pt.Transport)
+                                                 .ToListAsync();
+
+        var csv = new StringBuilder();
+        csv.AppendLine("ID_paczki_transport;ID_paczki;Rozmiar_paczki;ID_transport;Data_odbioru;Data_oddania");
+
+        foreach (var item in paczkiTransportData)
+        {
+            csv.AppendLine($"{item.ID_paczki_transport};{item.ID_paczki};{item.Paczka?.Rozmiar};{item.ID_transport};{item.DataOdbioru:yyyy-MM-dd};{item.DataOddania:yyyy-MM-dd}");
+        }
+
+        var bytes = Encoding.UTF8.GetBytes(csv.ToString());
+        var output = new FileContentResult(bytes, "text/csv")
+        {
+            FileDownloadName = "PaczkiTransportData.csv"
+        };
+
+        return output;
+    }
+
 }

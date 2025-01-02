@@ -1,27 +1,31 @@
 ﻿@model IEnumerable<Delivery.Models.PaczkiAutomat>
 
-@{
+    @{
     ViewData["Title"] = "PaczkiAutomat List";
-}
+    }
 
-<h1>PaczkiAutomat List</h1>
+    <h1>PaczkiAutomat List</h1>
 
-<p>
-    <a href="@Url.Action("Create", "PaczkiAutomat")" class="btn btn-primary">Create New</a>
-</p>
+    <p style="float:left;">
+        <a href="@Url.Action("Create", "PaczkiAutomat")" class="btn btn-primary">Create New</a>
+    </p>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>ID Paczki Automat</th>
-            <th>ID Paczki Transport</th>
-            <th>ID Automat</th>
-            <th>Lokalizacja Automat</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
+    <p style="float:right;">
+        <a href="@Url.Action("ExportToCsv", "PaczkiAutomat")" class="btn btn-success">Download CSV</a>
+    </p>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID Paczki Automat</th>
+                <th>ID Paczki Transport</th>
+                <th>ID Automat</th>
+                <th>Lokalizacja Automat</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
         {
             <tr>
                 <td>@item.ID_paczki_automat</td>
@@ -34,5 +38,5 @@
                 </td>
             </tr>
         }
-    </tbody>
-</table>
+        </tbody>
+    </table>

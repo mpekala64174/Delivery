@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dell\\Delivery\\Delivery\\Delivery.csproj": {}
+    "C:\\Users\\Dell\\Desktop\\Delivery\\Delivery.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dell\\Delivery\\Delivery\\Delivery.csproj": {
+    "C:\\Users\\Dell\\Desktop\\Delivery\\Delivery.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dell\\Delivery\\Delivery\\Delivery.csproj",
+        "projectUniqueName": "C:\\Users\\Dell\\Desktop\\Delivery\\Delivery.csproj",
         "projectName": "Delivery",
-        "projectPath": "C:\\Users\\Dell\\Delivery\\Delivery\\Delivery.csproj",
+        "projectPath": "C:\\Users\\Dell\\Desktop\\Delivery\\Delivery.csproj",
         "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dell\\Delivery\\Delivery\\obj\\",
+        "outputPath": "C:\\Users\\Dell\\Desktop\\Delivery\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",

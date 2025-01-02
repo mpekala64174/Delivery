@@ -38,6 +38,7 @@ builder.Services.AddAuthentication("UserCookie")
 // Dodaj us³ugi autoryzacji
 builder.Services.AddAuthorization();
 
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

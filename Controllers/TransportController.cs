@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
+using System.Text;
 
 [Authorize]
 public class TransportController : Controller
@@ -146,5 +147,30 @@ public class TransportController : Controller
     private bool TransportExists(int id)
     {
         return _context.Transport.Any(e => e.ID_transport == id);
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> ExportToCsv()
+    {
+        var data = await _context.Transport
+            .Include(t => t.Uzytkownik) // Include related Uzytkownik data
+            .ToListAsync();
+
+        var csv = new StringBuilder();
+        csv.AppendLine("ID_transport;ID_uzytkownika;Uzytkownik"); // Header with semicolon separator
+
+        foreach (var item in data)
+        {
+            var uzytkownikImie = item.Uzytkownik?.Imie ?? "Unknown";
+            csv.AppendLine($"{item.ID_transport};{item.ID_uzytkownika};{uzytkownikImie}");
+        }
+
+        var bytes = Encoding.UTF8.GetBytes(csv.ToString());
+        var output = new FileContentResult(bytes, "text/csv")
+        {
+            FileDownloadName = "Transport.csv"
+        };
+
+        return output;
     }
 }

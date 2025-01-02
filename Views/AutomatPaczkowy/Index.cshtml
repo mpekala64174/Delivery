@@ -6,10 +6,12 @@
 
 <h1>Automat Paczkowy List</h1>
 
-<p>
+<p style="float:left;">
     <a href="@Url.Action("Create", "AutomatPaczkowy")" class="btn btn-primary">Create New Automat Paczkowy</a>
 </p>
-
+<p style="float:right;">
+    <a href="@Url.Action("ExportToCsv", "AutomatPaczkowy")" class="btn btn-success">Download CSV</a>
+</p>
 <table class="table">
     <thead>
         <tr>

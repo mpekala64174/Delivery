@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Text;
 [Authorize]
 public class AutomatPaczkowyController : Controller
 {
@@ -94,5 +95,27 @@ public class AutomatPaczkowyController : Controller
     private bool AutomatPaczkowyExists(int id)
     {
         return _context.AutomatPaczkowy.Any(e => e.ID_automat == id);
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> ExportToCsv()
+    {
+        var data = await _context.AutomatPaczkowy.ToListAsync();
+
+        var csv = new StringBuilder();
+        csv.AppendLine("ID_automat;Lokalizacja"); // Header with semicolon separator
+
+        foreach (var item in data)
+        {
+            csv.AppendLine($"{item.ID_automat};{item.Lokalizacja}");
+        }
+
+        var bytes = Encoding.UTF8.GetBytes(csv.ToString());
+        var output = new FileContentResult(bytes, "text/csv")
+        {
+            FileDownloadName = "AutomatPaczkowy.csv"
+        };
+
+        return output;
     }
 }
